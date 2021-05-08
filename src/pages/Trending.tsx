@@ -52,7 +52,7 @@ const Trending: FC = () => {
   }, [loadMore]);
 
   return (
-    <Page>
+    <Page title="Giphy - Trending GIFs">
       <ControlsConsole />
 
       <>

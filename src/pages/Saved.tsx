@@ -9,7 +9,7 @@ const Saved: FC = () => {
   const { saved } = useAuth();
 
   return (
-    <Page>
+    <Page title="Giphy - Saved GIFs">
       {!!saved.length && (
         <SimpleGrid pt="4" pb="4" columns={[2, null, 3]} gap={4}>
           {saved.map((data: any, index) => (

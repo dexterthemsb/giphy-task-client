@@ -35,7 +35,7 @@ const Register: FC = () => {
   };
 
   return (
-    <Page>
+    <Page title="Giphy - Login">
       <Box w="full" minH="inherit" display="flex" alignItems="center" justifyContent="center">
         <form onSubmit={e => handleRegister(e)}>
           <Box

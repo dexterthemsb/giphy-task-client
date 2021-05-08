@@ -1,19 +1,32 @@
+import { Helmet } from "react-helmet";
 import { Container } from "@chakra-ui/layout";
 import { FC, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import FullPageLoading from "./FullPageLoading";
 
-const Page: FC = ({ children }) => {
+interface PageProps {
+  title: string;
+}
+
+const Page: FC<PageProps> = ({ title, children }) => {
   const { mounting } = useAuth();
 
   useEffect(() => window.scrollTo(0, 0), []);
 
-  return mounting ? (
-    <FullPageLoading />
-  ) : (
-    <Container maxW="container.lg" minH="100vh">
-      {children}
-    </Container>
+  return (
+    <>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
+
+      {mounting ? (
+        <FullPageLoading />
+      ) : (
+        <Container maxW="container.lg" minH="100vh">
+          {children}
+        </Container>
+      )}
+    </>
   );
 };
 
